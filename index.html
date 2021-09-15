@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>This Is A Box</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" 
+	integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="splash-container">
+		<div class="splash">
+			<h1 class="splash-head"> Book store</h1>
+			<img class="reading-icon" src="./img/reading-icon.png">
+			<p class="splash-subhead">
+				Search your book here
+			</p>
+			<a href="http://www.tanvir.pro">Just another link</a>
+			<form class="pure-form">
+				<input type="text" class="pure-input" />
+				<!--
+				<button type="submit" class="pure-button">Search</button>
+				-->
+				
+			</form>
+		</div>
+	</div>
+
+	<div id="book-list">
+		<h2 class="title">Book to Read</h2>
+		<ul>
+			<li class="indv-book">
+				<span class="name">Object oriented programming with PHP5</span>
+				<span class="delete">Delete</span>
+			</li>
+			<li class="indv-book">
+				<span class="name">Smashing Node.Js</span>
+				<span class="delete">Delete</span>
+			</li>
+			<li class="indv-book">
+				<span class="name">ES6 Module development</span>
+				<span class="delete">Delete</span>
+			</li>
+			<li class="indv-book">
+				<span class="name">Build REST API with Node JS</span>
+				<span class="delete">Delete</span>
+			</li class="indv-book">
+			<li class="indv-book">
+				<span class="name">WordPress novice to Ninja</span>
+				<span class="delete">Delete</span>
+			</li>
+		</ul>
+		<div class="hide-book">
+			<input type="checkbox" id="hide">
+			<label for="hide">Hide all books</label>
+		</div>
+	
+		<form id="add-book" class="pure-form">
+			<input type="text" class="pure-input" placeholder="Add a book"/>
+			<button class="pure-button">Add Book</button>
+		</form>
+
+	</div>
+
+</body>
+<script src="app.js"></script> 
+</html>
