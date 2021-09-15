@@ -14,21 +14,21 @@ const bookList = document.querySelector('#book-list');
 bookList.innerHTML += '<p>This is how to add html</p>';
 
 const hero = document.querySelector('.splash');
-console.log('.splash node type is:', hero.nodeType);
-console.log('.splash node name is:', hero.nodeName);
-console.log('.splash node has child node:', hero.hasChildNodes());
+//console.log('.splash node type is:', hero.nodeType);
+//console.log('.splash node name is:', hero.nodeName);
+//console.log('.splash node has child node:', hero.hasChildNodes());
 
 const cloneHero = hero.cloneNode(true);
-console.log(cloneHero);
+//console.log(cloneHero);
 
 //hero.innerHTML += cloneHero;
 
-console.log('The Parent node of #book-list is:', bookList.parentNode);
+//console.log('The Parent node of #book-list is:', bookList.parentNode);
 const heading = document.querySelector('.title');
-console.log('The Parent node of <h2 class="title"> is:', heading.parentNode);
+//console.log('The Parent node of <h2 class="title"> is:', heading.parentNode);
 
-console.log('The next sibling of #book-list is:', bookList.nextSibling);
-console.log('The next element of #book-list is:', bookList.nextElementSibling);
+//console.log('The next sibling of #book-list is:', bookList.nextSibling);
+//console.log('The next element of #book-list is:', bookList.nextElementSibling);
 
 //Add paragaph after in splash-subhead p tag
 const joinP = bookList.previousElementSibling.querySelector('p');
@@ -36,8 +36,8 @@ joinP.innerHTML += '</br> Yes, You are getting your passion Back!';
 
 const h2 = document.querySelector('#book-list h2');
 h2.addEventListener('click', function(e){
-   console.log(e.target);
-   console.log(e);
+  // console.log(e.target);
+   //console.log(e);
 });
 
 // const btns = document.querySelectorAll('#book-list .delete');
@@ -78,9 +78,9 @@ addFrom.addEventListener('submit', function(e){
    const value = addFrom.querySelector('input[type="text"]').value;
    //console.log(value);
    //create elements
-   const li = document.createElement('li');
-   const bookName = document.createElement('span');
-   const deleteBtn = document.createElement('span');
+   //const li = document.createElement('li');
+   //const bookName = document.createElement('span');
+   //const deleteBtn = document.createElement('span');
    //Add classes in element
    li.classList.add('indv-book');
    bookName.classList.add('name');
@@ -104,3 +104,20 @@ hideBook.addEventListener('change', function(e){
       list.style.display = "initial";
    }
 })
+
+//filter books
+const searchBar = document.forms['book-search'];
+const searchInput = searchBar.querySelector('input');
+searchInput.addEventListener('keyup', function(e){
+      const inputKey = e.target.value.toLowerCase();
+      const books = list.getElementsByTagName('li');
+      Array.from(books).forEach(function(item){
+         const title = item.firstElementChild.textContent;
+         if(title.toLowerCase().indexOf(inputKey) != -1){
+            item.style.display = 'block';
+         }
+         else{
+            item.style.display = 'none';
+         }
+      });
+});
