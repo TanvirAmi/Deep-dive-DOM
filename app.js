@@ -93,3 +93,14 @@ addFrom.addEventListener('submit', function(e){
    li.appendChild(deleteBtn);
    list.appendChild(li);
 });
+
+//hide books
+const hideBook = document.querySelector('#hide');
+hideBook.addEventListener('change', function(e){
+   if(hideBook.checked){
+      list.style.display = "none";
+   }
+   else{
+      list.style.display = "initial";
+   }
+})
